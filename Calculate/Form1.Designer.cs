@@ -49,8 +49,8 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.rtbx_source1 = new System.Windows.Forms.RichTextBox();
             this.rtbx_result = new System.Windows.Forms.RichTextBox();
-            this.rtbx_operate = new System.Windows.Forms.RichTextBox();
             this.rtbx_source2 = new System.Windows.Forms.RichTextBox();
+            this.rtbx_operate = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -253,6 +253,7 @@
             // 
             this.btn_clr.AutoSize = true;
             this.btn_clr.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_clr.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_clr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_clr.FlatAppearance.BorderSize = 0;
             this.btn_clr.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -317,6 +318,7 @@
             // 
             this.btn_op_sub.AutoSize = true;
             this.btn_op_sub.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_op_sub.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_op_sub.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_op_sub.FlatAppearance.BorderSize = 0;
             this.btn_op_sub.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold);
@@ -402,23 +404,6 @@
             this.rtbx_result.TabIndex = 2;
             this.rtbx_result.Text = "";
             // 
-            // rtbx_operate
-            // 
-            this.rtbx_operate.BackColor = System.Drawing.SystemColors.Window;
-            this.rtbx_operate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbx_operate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbx_operate.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.rtbx_operate.Location = new System.Drawing.Point(0, 46);
-            this.rtbx_operate.Margin = new System.Windows.Forms.Padding(0);
-            this.rtbx_operate.Multiline = false;
-            this.rtbx_operate.Name = "rtbx_operate";
-            this.rtbx_operate.ReadOnly = true;
-            this.rtbx_operate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.rtbx_operate.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rtbx_operate.Size = new System.Drawing.Size(312, 46);
-            this.rtbx_operate.TabIndex = 3;
-            this.rtbx_operate.Text = "";
-            // 
             // rtbx_source2
             // 
             this.rtbx_source2.BackColor = System.Drawing.SystemColors.Window;
@@ -437,6 +422,23 @@
             this.rtbx_source2.TabIndex = 4;
             this.rtbx_source2.Text = "";
             // 
+            // rtbx_operate
+            // 
+            this.rtbx_operate.BackColor = System.Drawing.SystemColors.Window;
+            this.rtbx_operate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbx_operate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbx_operate.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.rtbx_operate.Location = new System.Drawing.Point(0, 46);
+            this.rtbx_operate.Margin = new System.Windows.Forms.Padding(0);
+            this.rtbx_operate.Multiline = false;
+            this.rtbx_operate.Name = "rtbx_operate";
+            this.rtbx_operate.ReadOnly = true;
+            this.rtbx_operate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rtbx_operate.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtbx_operate.Size = new System.Drawing.Size(312, 46);
+            this.rtbx_operate.TabIndex = 3;
+            this.rtbx_operate.Text = "";
+            // 
             // Calculater
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -446,14 +448,12 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Calculater";
             this.Text = "Calculater";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Calculater_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);

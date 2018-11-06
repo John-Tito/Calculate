@@ -24,6 +24,7 @@ namespace Calculate
             InitializeComponent();
         }
 
+
         private void Btn_num_Click(object sender, EventArgs e)
         {
             Button send = sender as Button;
@@ -46,8 +47,8 @@ namespace Calculate
 
         private void Btn_op_equ_Click(object sender, EventArgs e)
         {
-            UInt64 numA = Convert.ToUInt64(num1);
-            UInt64 numB = Convert.ToUInt64(num2);
+            double numA = Convert.ToUInt64(num1);
+            double numB = Convert.ToUInt64(num2);
             switch (ope)
             {
                 case Operater.multiply:
@@ -55,8 +56,18 @@ namespace Calculate
                     break;
 
                 case Operater.divide:
-                    result = (numA / numB).ToString();
-                    break;
+                    if (numB == 0)
+                    {
+                        rtbx_result.Clear();
+                        rtbx_result.AppendText("除数不能为零");
+                        return;
+                    }
+                    else
+                    {
+                        result = (numA / numB).ToString();
+                        break;
+                    }
+
 
                 case Operater.plus:
                     result = (numA + numB).ToString();
@@ -115,8 +126,9 @@ namespace Calculate
             ope = Operater.undefine;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Calculater_Load(object sender, EventArgs e)
         {
+
         }
     }
 }
